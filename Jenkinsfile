@@ -2,12 +2,7 @@
 pipeline {
     agent any
     stages {
-        stage('Clone sources') {
-            steps {
-                git branch: 'main', url: '<your_git_repo>/my-todoapp.git'
-            }
-        }
-        stage(Check file list’) {
+        stage('Check file list') {
             steps { 
                 sh 'ls -l'
             }
