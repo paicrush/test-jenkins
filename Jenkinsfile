@@ -1,18 +1,15 @@
-// Jenkinsfile
 pipeline {
     agent any
+    environment { 
+        CC = 'clang'
+    }
     stages {
-        stage('Check file list') {
-            steps { 
-                sh 'ls -l'
+        stage('Example') {
+            environment { 
+                AN_ACCESS_KEY = "my_credentails"
             }
-        }
-        stage('Show index.js') {
-            steps { //ในโปรเจคต้องมี index.js
-                sh """
-                    ls -l  
-                    cat index.js
-                   """
+            steps {
+                sh 'printenv'
             }
         }
     }
