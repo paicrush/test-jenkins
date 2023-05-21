@@ -9,8 +9,10 @@ pipeline {
         }
         stage('Show index.js') {
             steps { //ในโปรเจคต้องมี index.js
-                sh 'cd src'
-                sh 'cat index.js'
+                sh """
+                    ls -l  
+                    cat index.js
+                   """
             }
         }
     }
